@@ -9,18 +9,17 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
-
     res.render("index", {
     });
   });
 
-app.get("/detalhes/:id", (req, res) => {
-const id = req.params.id;
-const pokemon = pokedex[id];
-res.render("detalhes", {
-    pokemon,
-    });
-});
+// app.get("/detalhes/:id", (req, res) => {
+// const id = req.params.id;
+// const pokemon = pokedex[id];
+// res.render("detalhes", {
+//     pokemon,
+//     });
+// });
 
 app.get("/atividades", (req, res) => {
     res.render("atividades");
@@ -30,9 +29,12 @@ app.get("/jogos", (req, res) => {
 res.render("jogos");
 });
 
-  app.post("/new", (req, res) => {
-    const pokemon = req.body;
-    pokedex.push();
-    res.redirect("/");
+  // app.post("/new", (req, res) => {
+  //   const pokemon = req.body;
+  //   pokedex.push();
+  //   res.redirect("/");
   
-  });
+  // });
+
+  // Adicionando a const port e uma arow function de callback para mostrar no console que o servidor está rodando.
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
